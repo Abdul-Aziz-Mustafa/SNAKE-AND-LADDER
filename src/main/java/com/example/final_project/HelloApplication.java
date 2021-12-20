@@ -10,16 +10,21 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class HelloApplication extends Application {
+    private Stage greeting_stage;
+
     @Override
-    public void start(Stage stage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
-        Scene scene=new Scene(root);
-        stage.getIcons().add(new Image(HelloApplication.class.getResourceAsStream("icon3.jpeg")));
-//        scene.getStylesheets().add(getClass().getResource("application.css"))
+    public void start(Stage stage) throws IOException, InterruptedException {
+        this.greeting_stage = stage;
+        stage.setResizable(false);
+        Image icon = new Image("icon3.jpeg");
+        stage.getIcons().add(icon);
+        stage.setTitle("Will Hero");
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+
         stage.setScene(scene);
         stage.show();
     }
-
     public static void main(String[] args) {
         launch();
     }
