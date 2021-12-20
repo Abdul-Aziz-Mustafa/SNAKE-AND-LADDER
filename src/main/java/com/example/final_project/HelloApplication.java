@@ -18,7 +18,7 @@ public class HelloApplication extends Application {
         stage.setResizable(true);
         Image icon = new Image("icon3.jpeg");
         stage.getIcons().add(icon);
-        stage.setTitle("Snake And :");
+        stage.setTitle("Snake And Ladder");
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
