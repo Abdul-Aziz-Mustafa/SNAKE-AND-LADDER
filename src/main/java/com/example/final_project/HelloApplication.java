@@ -15,10 +15,10 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException, InterruptedException {
         this.greeting_stage = stage;
-        stage.setResizable(false);
+        stage.setResizable(true);
         Image icon = new Image("icon3.jpeg");
         stage.getIcons().add(icon);
-        stage.setTitle("Will Hero");
+        stage.setTitle("Snake And :");
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
