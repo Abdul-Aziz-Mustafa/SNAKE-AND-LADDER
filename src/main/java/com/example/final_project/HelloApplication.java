@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 
 public class HelloApplication extends Application {
@@ -15,6 +16,10 @@ public class HelloApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException, InterruptedException {
+
+
+
+
         this.greeting_stage = stage;
         stage.setResizable(true);
         Image icon = new Image("icon3.jpeg");
@@ -24,7 +29,9 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load());
 
         stage.setScene(scene);
-        stage.show();}
+        stage.show();
+    }
+
 
 
 
