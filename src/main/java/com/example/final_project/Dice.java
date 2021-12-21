@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.ResourceBundle;
 
-public class Dice   {
+public class Dice {
     //@by_aziz//
     Random random = new Random();
 
@@ -319,7 +319,7 @@ public class Dice   {
 
     private Pane q99;
 
-    class cordinates{
+    class cordinates {
         double x;
         double y;
         boolean s;
@@ -345,76 +345,172 @@ public class Dice   {
 
     }
 
-    ArrayList<cordinates> ar=new ArrayList<cordinates>();
-    public void adder(Pane q){
-        ar.add(new cordinates(q.getLayoutX(),q.getLayoutY()));
+    ArrayList<cordinates> ar = new ArrayList<cordinates>();
+
+    public void adder(Pane q) {
+        ar.add(new cordinates(q.getLayoutX(), q.getLayoutY()));
     }
-    public void adderL(Pane q,int lh){
-        ar.add(new cordinates(q.getLayoutX(),q.getLayoutY(),false,true,-1,lh));
+
+    public void adderL(Pane q, int lh) {
+        ar.add(new cordinates(q.getLayoutX(), q.getLayoutY(), false, true, -1, lh));
 
     }
-    public void adderS(Pane q,int st){
-        ar.add(new cordinates(q.getLayoutX(),q.getLayoutY(),false,true,-1,st));
+
+    public void adderS(Pane q, int st) {
+        ar.add(new cordinates(q.getLayoutX(), q.getLayoutY(), false, true, -1, st));
 
     }
-    public void pane_adder(){
 
-        adder(q0);adder(q1);adder(q2);adder(q3);
-        adderL(q4,16);adder(q5);adderL(q6,14);
+    public void pane_adder() {
+
+        adder(q0);
+        adder(q1);
+        adder(q2);
+        adder(q3);
+        adderL(q4, 16);
+        adder(q5);
+        adderL(q6, 14);
         adder(q7);
-        adderL(q8,13);
-        adder(q9);adder(q10);adder(q11);adder(q12);adder(q13);adder(q14);adder(q15);adder(q16);adder(q17);adder(q18);adder(q19);
-        adder(q20);adder(q21);adder(q22);
-        adderS(q23,17);adder(q24); adderS(q25,15);adder(q26);adderS(q27,13);
-        adder(q28);adder(q29);adder(q30);adder(q31);adderL(q32,46);adder(q33);
-        adderL(q34,44);adder(q35);adderL(q36,42);adder(q37);
-        adder(q38);adder(q39);adderL(q40,80);
-        adder(q41);adder(q42);adder(q43);adder(q44);adder(q45);adder(q46);adder(q47);adder(q48);adder(q49);adder(q51);adder(q52);adder(q53);adder(q50);
-        adderS(q54,33);adder(q55);adderS(q56,35);adder(q57);adderS(q58,37);
-        adder(q59);adder(q60);adder(q61);adder(q62);adderL(q63,82);adder(q64);
-        adderL(q65,84);adder(q66);adderL(q67,86);
-        adder(q68);adder(q69);adder(q70);adder(q71);adder(q72);adder(q73);adder(q74);adder(q75);adder(q76);adder(q77);adder(q78);adder(q79);adder(q80);adder(q81);adder(q82);adder(q83);adder(q84);adder(q85);adder(q86);adder(q87);adder(q88);adder(q89);
-        adderS(q90,49);adder(q91);adder(q92);adder(q93);adderS(q94,73);
-        adder(q95);adderS(q96,76);adder(q97);adderS(q98,77);adder(q99);
+        adderL(q8, 13);
+        adder(q9);
+        adder(q10);
+        adder(q11);
+        adder(q12);
+        adder(q13);
+        adder(q14);
+        adder(q15);
+        adder(q16);
+        adder(q17);
+        adder(q18);
+        adder(q19);
+        adder(q20);
+        adder(q21);
+        adder(q22);
+        adderS(q23, 17);
+        adder(q24);
+        adderS(q25, 15);
+        adder(q26);
+        adderS(q27, 13);
+        adder(q28);
+        adder(q29);
+        adder(q30);
+        adder(q31);
+        adderL(q32, 46);
+        adder(q33);
+        adderL(q34, 44);
+        adder(q35);
+        adderL(q36, 42);
+        adder(q37);
+        adder(q38);
+        adder(q39);
+        adderL(q40, 80);
+        adder(q41);
+        adder(q42);
+        adder(q43);
+        adder(q44);
+        adder(q45);
+        adder(q46);
+        adder(q47);
+        adder(q48);
+        adder(q49);
+        adder(q51);
+        adder(q52);
+        adder(q53);
+        adder(q50);
+        adderS(q54, 33);
+        adder(q55);
+        adderS(q56, 35);
+        adder(q57);
+        adderS(q58, 37);
+        adder(q59);
+        adder(q60);
+        adder(q61);
+        adder(q62);
+        adderL(q63, 82);
+        adder(q64);
+        adderL(q65, 84);
+        adder(q66);
+        adderL(q67, 86);
+        adder(q68);
+        adder(q69);
+        adder(q70);
+        adder(q71);
+        adder(q72);
+        adder(q73);
+        adder(q74);
+        adder(q75);
+        adder(q76);
+        adder(q77);
+        adder(q78);
+        adder(q79);
+        adder(q80);
+        adder(q81);
+        adder(q82);
+        adder(q83);
+        adder(q84);
+        adder(q85);
+        adder(q86);
+        adder(q87);
+        adder(q88);
+        adder(q89);
+        adderS(q90, 49);
+        adder(q91);
+        adder(q92);
+        adder(q93);
+        adderS(q94, 73);
+        adder(q95);
+        adderS(q96, 76);
+        adder(q97);
+        adderS(q98, 77);
+        adder(q99);
 
     }
+
+    static int num;
+
+    static int pos = 0;
+
     @FXML
     public void action(ActionEvent e) throws InterruptedException {
         pane_adder();
-        TranslateTransition t=new TranslateTransition();
-        t.setDuration(Duration.millis(1000));
-        t.setByX(61);
-        t.setNode(myCircle);
-        t.play();
-//        Thread.sleep(1000);
-        myCircle.setCenterX(ar.get(1).x);
+        System.out.println(num);
+        pos = pos + num;
+        System.out.println(ar.get(0).x);
+        System.out.println(ar.get(0).y);
+        myCircle.setCenterX(ar.get(pos).x);
+        myCircle.setCenterY(ar.get(pos).y-667);
     }
+
+
     @FXML
-    int roll(ActionEvent event) {
-        int number=-1;
+    void roll(ActionEvent event) {
+
 
         rollButton.setDisable(true);
 
-
+        Thread thread = new Thread() {
+            public void run() {
+                System.out.println("Thread Running");
                 try {
                     for (int i = 0; i < 15; i++) {
-                         number=(random.nextInt(6)+1);
-                        Image dImage = new Image(getClass().getResourceAsStream("D" + number +".jpeg"));
+                        int number = (random.nextInt(6) + 1);
+                        Image dImage = new Image(getClass().getResourceAsStream("D" + number + ".jpeg"));
                         diceImage.setImage(dImage);
-
                         Thread.sleep(50);
+                        num = number;
+
                     }
                     rollButton.setDisable(false);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-
-                System.out.println(number);
-
-                return number;
             }
+        };
+
+        thread.start();
 
 
+    }
 
 
 }
