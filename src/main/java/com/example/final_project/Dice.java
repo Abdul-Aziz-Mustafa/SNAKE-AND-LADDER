@@ -322,10 +322,10 @@ public class Dice {
     class cordinates {
         double x;
         double y;
-        boolean s;
-        boolean l;
-        int st;
-        int lh;
+        boolean s=false;
+        boolean l=false;
+        int st=-1;
+        int lh=-1;
 
         public cordinates(double x, double y) {
             this.x = x;
@@ -413,10 +413,10 @@ public class Dice {
         adder(q47);
         adder(q48);
         adder(q49);
+        adder(q50);
         adder(q51);
         adder(q52);
         adder(q53);
-        adder(q50);
         adderS(q54, 33);
         adder(q55);
         adderS(q56, 35);
@@ -459,7 +459,7 @@ public class Dice {
         adder(q93);
         adderS(q94, 73);
         adder(q95);
-        adderS(q96, 76);
+        adderS(q96, 75);
         adder(q97);
         adderS(q98, 77);
         adder(q99);
@@ -469,74 +469,9 @@ public class Dice {
     static int num;
 
     static int pos = 0;
-    @FXML
-    void roll() throws InterruptedException {
-
-
-        rollButton.setDisable(true);
-
-        Thread thread = new Thread() {
-            public void run() {
-                System.out.println("Thread Running");
-                try {
-                    for (int i = 0; i < 15; i++) {
-                        int number = (random.nextInt(6) + 1);
-                        Image dImage = new Image(getClass().getResourceAsStream("D" + number + ".jpeg"));
-                        diceImage.setImage(dImage);
-                        Thread.sleep(50);
-                        num = number;
-
-                    }
-                    rollButton.setDisable(false);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        };
-
-        thread.start();
-//        thread.join();
-
-
-    }
-    @FXML
-    public void action(ActionEvent e) throws InterruptedException {
-        pane_adder();
-        roll();
-//        Thread.sleep(1000);
-        System.out.println(num+"number is ");
-        pos = pos + num;
-        TranslateTransition translate = new TranslateTransition();
-            translate.setToX(ar.get(pos).x);
-            translate.setToY(ar.get(pos).y-667);
-            translate.setDuration(Duration.millis(1000));
-        System.out.println(ar.get(pos).x);
-        System.out.println(ar.get(pos).y);
-        myCircle.getCenterX();
-        myCircle.getLayoutY();
-        System.out.println(pos+"position\n");
-        if(ar.get(pos).l){
-            translate.setToX((ar.get(ar.get(pos).lh)).x);
-            translate.setToY((ar.get(ar.get(pos).lh)).y-667);
-            translate.setDuration(Duration.millis(1000));
-            pos=ar.get(pos).lh;
-        }
-        if(ar.get(pos).s){
-            translate.setToX((ar.get(ar.get(pos).st)).x);
-            translate.setToY((ar.get(ar.get(pos).st)).y-667);
-            translate.setDuration(Duration.millis(1000));
-            pos=ar.get(pos).st;
-
-        }
-        translate.setNode(myCircle);
-
-        translate.play();
-
-    }
-
 
 //    @FXML
-//    void roll(ActionEvent event) {
+//    void roll() throws InterruptedException {
 //
 //
 //        rollButton.setDisable(true);
@@ -561,9 +496,77 @@ public class Dice {
 //        };
 //
 //        thread.start();
+////        thread.sleep(1000);
+//        thread.join();
 //
 //
 //    }
+
+    @FXML
+    public void action(ActionEvent e) throws InterruptedException {
+        pane_adder();
+        System.out.println(num + "number is ");
+        pos = pos + num;
+        TranslateTransition translate = new TranslateTransition();
+        translate.setToX(ar.get(pos).x);
+        translate.setToY(ar.get(pos).y - 667);
+        translate.setDuration(Duration.millis(1000));
+        System.out.println(ar.get(pos).x);
+        System.out.println(ar.get(pos).y);
+        System.out.println(q54.getLayoutX()+"x");
+        System.out.println(q54.getLayoutY()+"y");
+//        myCircle.getCenterX();
+//        myCircle.getLayoutY();
+        if (ar.get(pos).l) {
+            translate.setToX((ar.get(ar.get(pos).lh)).x);
+            translate.setToY((ar.get(ar.get(pos).lh)).y - 667);
+            translate.setDuration(Duration.millis(1000));
+            pos = ar.get(pos).lh;
+        }
+        if (ar.get(pos).s) {
+            translate.setToX((ar.get(ar.get(pos).st)).x);
+            translate.setToY((ar.get(ar.get(pos).st)).y - 667);
+            translate.setDuration(Duration.millis(1000));
+            pos = ar.get(pos).st;
+
+        }
+        translate.setNode(myCircle);
+
+        translate.play();
+        System.out.println(pos + "position\n");
+
+    }
+
+
+    @FXML
+    void roll(ActionEvent event) {
+
+
+        rollButton.setDisable(true);
+
+        Thread thread = new Thread() {
+            public void run() {
+                System.out.println("Thread Running");
+                try {
+                    for (int i = 0; i < 15; i++) {
+                        int number = (random.nextInt(6) + 1);
+                        Image dImage = new Image(getClass().getResourceAsStream("D" + number + ".jpeg"));
+                        diceImage.setImage(dImage);
+                        Thread.sleep(50);
+                        num = number;
+
+                    }
+                    rollButton.setDisable(false);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+
+        thread.start();
+
+
+    }
 
 
 }
