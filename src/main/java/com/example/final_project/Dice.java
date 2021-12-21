@@ -371,7 +371,7 @@ public class Dice {
         adder(q5);
         adderL(q6, 14);
         adder(q7);
-        adderL(q8, 13);
+        adderL(q8, 12);
         adder(q9);
         adder(q10);
         adder(q11);
@@ -469,50 +469,8 @@ public class Dice {
     static int num;
 
     static int pos = 0;
-
     @FXML
-    public void action(ActionEvent e) throws InterruptedException {
-        pane_adder();
-        System.out.println(num);
-        pos = pos + num;
-        TranslateTransition translate = new TranslateTransition();
-            translate.setToX(ar.get(pos).x);
-            translate.setToY(ar.get(pos).y-667);
-
-            //setting the duration for the Translate transition
-            translate.setDuration(Duration.millis(1000));
-
-//            translate.play();
-//
-        System.out.println(ar.get(pos).x);
-        System.out.println(ar.get(pos).y);
-//        myCircle.setCenterX(ar.get(pos).x);
-//        myCircle.setCenterY(ar.get(pos).y-667);
-        myCircle.getCenterX();
-        myCircle.getLayoutY();
-        System.out.println(pos);
-        if(ar.get(pos).l){
-            System.out.println(ar.get(pos).lh);
-//            TranslateTransition translate2 = new TranslateTransition();
-            translate.setToX((ar.get(ar.get(pos).lh)).x);
-            translate.setToY((ar.get(ar.get(pos).lh)).y-667);
-//
-//            //setting the duration for the Translate transition
-            translate.setDuration(Duration.millis(1000));
-//
-//            translate.setNode(myCircle);
-//
-//
-        }
-        translate.setNode(myCircle);
-
-        translate.play();
-
-    }
-
-
-    @FXML
-    void roll(ActionEvent event) {
+    void roll() throws InterruptedException {
 
 
         rollButton.setDisable(true);
@@ -537,9 +495,84 @@ public class Dice {
         };
 
         thread.start();
+        thread.join();
 
 
     }
+    @FXML
+    public void action(ActionEvent e) throws InterruptedException {
+        pane_adder();
+
+        roll();
+
+        System.out.println(num+"number is ");
+        pos = pos + num;
+        TranslateTransition translate = new TranslateTransition();
+            translate.setToX(ar.get(pos).x);
+            translate.setToY(ar.get(pos).y-667);
+
+            //setting the duration for the Translate transition
+            translate.setDuration(Duration.millis(1000));
+
+//            translate.play();
+//
+        System.out.println(ar.get(pos).x);
+        System.out.println(ar.get(pos).y);
+//        myCircle.setCenterX(ar.get(pos).x);
+//        myCircle.setCenterY(ar.get(pos).y-667);
+        myCircle.getCenterX();
+        myCircle.getLayoutY();
+        System.out.println(pos+"position\n");
+        if(ar.get(pos).l){
+            translate.setToX((ar.get(ar.get(pos).lh)).x);
+            translate.setToY((ar.get(ar.get(pos).lh)).y-667);
+            translate.setDuration(Duration.millis(1000));
+            pos=ar.get(pos).lh;
+
+        }
+        if(ar.get(pos).s){
+            translate.setToX((ar.get(ar.get(pos).st)).x);
+            translate.setToY((ar.get(ar.get(pos).st)).y-667);
+            translate.setDuration(Duration.millis(1000));
+            pos=ar.get(pos).st;
+
+        }
+        translate.setNode(myCircle);
+
+        translate.play();
+
+    }
+
+
+//    @FXML
+//    void roll(ActionEvent event) {
+//
+//
+//        rollButton.setDisable(true);
+//
+//        Thread thread = new Thread() {
+//            public void run() {
+//                System.out.println("Thread Running");
+//                try {
+//                    for (int i = 0; i < 15; i++) {
+//                        int number = (random.nextInt(6) + 1);
+//                        Image dImage = new Image(getClass().getResourceAsStream("D" + number + ".jpeg"));
+//                        diceImage.setImage(dImage);
+//                        Thread.sleep(50);
+//                        num = number;
+//
+//                    }
+//                    rollButton.setDisable(false);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        };
+//
+//        thread.start();
+//
+//
+//    }
 
 
 }
