@@ -475,10 +475,39 @@ public class Dice {
         pane_adder();
         System.out.println(num);
         pos = pos + num;
-        System.out.println(ar.get(0).x);
-        System.out.println(ar.get(0).y);
-        myCircle.setCenterX(ar.get(pos).x);
-        myCircle.setCenterY(ar.get(pos).y-667);
+        TranslateTransition translate = new TranslateTransition();
+            translate.setToX(ar.get(pos).x);
+            translate.setToY(ar.get(pos).y-667);
+
+            //setting the duration for the Translate transition
+            translate.setDuration(Duration.millis(1000));
+
+//            translate.play();
+//
+        System.out.println(ar.get(pos).x);
+        System.out.println(ar.get(pos).y);
+//        myCircle.setCenterX(ar.get(pos).x);
+//        myCircle.setCenterY(ar.get(pos).y-667);
+        myCircle.getCenterX();
+        myCircle.getLayoutY();
+        System.out.println(pos);
+        if(ar.get(pos).l){
+            System.out.println(ar.get(pos).lh);
+//            TranslateTransition translate2 = new TranslateTransition();
+            translate.setToX((ar.get(ar.get(pos).lh)).x);
+            translate.setToY((ar.get(ar.get(pos).lh)).y-667);
+//
+//            //setting the duration for the Translate transition
+            translate.setDuration(Duration.millis(1000));
+//
+//            translate.setNode(myCircle);
+//
+//
+        }
+        translate.setNode(myCircle);
+
+        translate.play();
+
     }
 
 
