@@ -133,7 +133,7 @@
             <Pane fx:id="q12" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="7" GridPane.rowIndex="8" />
             <Pane fx:id="q11" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="8" GridPane.rowIndex="8" />
             <Pane fx:id="q10" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="9" GridPane.rowIndex="8" />
-            <Pane fx:id="qo" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="9">
+            <Pane fx:id="q0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="9">
                <children>
                   <Circle fx:id="myCircle" fill="DODGERBLUE" layoutX="31.0" layoutY="42.0" radius="18.0" stroke="BLACK" strokeType="INSIDE" />
                </children></Pane>
