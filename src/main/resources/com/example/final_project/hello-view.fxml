@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.shape.Circle?>
 
-<AnchorPane fx:id="myCircle1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="884.0" prefWidth="702.0" style="-fx-background-color: #9e3515;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.final_project.Dice">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="884.0" prefWidth="702.0" style="-fx-background-color: #9e3515;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.final_project.Dice">
    <children>
       <ImageView fx:id="myGrid" fitHeight="747.0" fitWidth="628.0" layoutX="38.0" layoutY="19.0" pickOnBounds="true">
          <image>
@@ -135,8 +135,8 @@
             <Pane fx:id="q10" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="9" GridPane.rowIndex="8" />
             <Pane fx:id="q0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="9">
                <children>
-                  <Circle fx:id="myCircle" fill="DODGERBLUE" layoutX="29.0" layoutY="43.0" radius="18.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Circle fx:id="myCircle1" fill="#ff231f" layoutX="29.0" layoutY="43.0" radius="18.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="myCircle1" fill="DODGERBLUE" layoutX="29.0" layoutY="43.0" radius="18.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="myCircle2" fill="#ff231f" layoutX="29.0" layoutY="43.0" radius="18.0" stroke="BLACK" strokeType="INSIDE" />
                </children></Pane>
             <Pane fx:id="q1" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
             <Pane fx:id="q2" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="9" />

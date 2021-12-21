@@ -29,7 +29,9 @@ public class Dice {
     @FXML
     private Button rollButton;
     @FXML
-    private Circle myCircle;
+    private Circle myCircle1;
+    @FXML
+    private Circle myCircle2;
     @FXML
     protected Pane q0;
     @FXML
@@ -322,10 +324,10 @@ public class Dice {
     class cordinates {
         double x;
         double y;
-        boolean s=false;
-        boolean l=false;
-        int st=-1;
-        int lh=-1;
+        boolean s = false;
+        boolean l = false;
+        int st = -1;
+        int lh = -1;
 
         public cordinates(double x, double y) {
             this.x = x;
@@ -357,7 +359,7 @@ public class Dice {
     }
 
     public void adderS(Pane q, int st) {
-        ar.add(new cordinates(q.getLayoutX(), q.getLayoutY(), false, true, -1, st));
+        ar.add(new cordinates(q.getLayoutX(), q.getLayoutY(), true, false, -1, st));
 
     }
 
@@ -468,90 +470,120 @@ public class Dice {
 
     static int num;
 
-    static int pos = 0;
+    static int pos1 = 0;
+    static int pos2 = 0;
 
-//    @FXML
-//    void roll() throws InterruptedException {
-//
-//
-//        rollButton.setDisable(true);
-//
-//        Thread thread = new Thread() {
-//            public void run() {
-//                System.out.println("Thread Running");
-//                try {
-//                    for (int i = 0; i < 15; i++) {
-//                        int number = (random.nextInt(6) + 1);
-//                        Image dImage = new Image(getClass().getResourceAsStream("D" + number + ".jpeg"));
-//                        diceImage.setImage(dImage);
-//                        Thread.sleep(50);
-//                        num = number;
-//
-//                    }
-//                    rollButton.setDisable(false);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        };
-//
-//        thread.start();
-////        thread.sleep(1000);
-//        thread.join();
-//
-//
-//    }
-    boolean check=false;
+
+    boolean check1 = false;
+    boolean check2 = false;
+    static int counter = 0;
 
 
     @FXML
     public void action(ActionEvent e) throws InterruptedException {
 
 
+        if (counter % 2 == 0) {
 
-        if(num==1){
-            check=true;
-            boolean doublecheck=true;
-        }
-        if(check){
-            pane_adder();
-            System.out.println(num + "number is ");
-            pos = pos + num;
-            TranslateTransition translate = new TranslateTransition();
-            translate.setToX(ar.get(pos).x);
-            translate.setToY(ar.get(pos).y - 667);
-            translate.setDuration(Duration.millis(1000));
-            System.out.println(ar.get(pos).x);
-            System.out.println(ar.get(pos).y);
-            System.out.println(q54.getLayoutX()+"x");
-            System.out.println(q54.getLayoutY()+"y");
-//        myCircle.getCenterX();
-//        myCircle.getLayoutY();
-            if (ar.get(pos).l) {
-                translate.setToX((ar.get(ar.get(pos).lh)).x);
-                translate.setToY((ar.get(ar.get(pos).lh)).y - 667);
-                translate.setDuration(Duration.millis(1000));
-                pos = ar.get(pos).lh;
+            if (num == 1) {
+                check1 = true;
             }
-            if (ar.get(pos).s) {
-                translate.setToX((ar.get(ar.get(pos).st)).x);
-                translate.setToY((ar.get(ar.get(pos).st)).y - 667);
+            if (check1) {
+                pane_adder();
+                System.out.println(num + "number is ");
+                pos1 = pos1 + num; //97+5
+                if (pos1 >= 100) {
+                    pos1=pos1-num;
+                    counter++;
+                    return;
+                }
+                if (pos1 == 99) {
+                    System.out.println("yay\n");
+                }
+                TranslateTransition translate = new TranslateTransition();
+                translate.setToX(ar.get(pos1).x);
+                translate.setToY(ar.get(pos1).y - 667);
                 translate.setDuration(Duration.millis(1000));
-                pos = ar.get(pos).st;
+                System.out.println(ar.get(pos1).x);
+                System.out.println(ar.get(pos1).y);
+                System.out.println(q54.getLayoutX() + "x");
+                System.out.println(q54.getLayoutY() + "y");
 
+                if (ar.get(pos1).l) {
+                    translate.setToX((ar.get(ar.get(pos1).lh)).x);
+                    translate.setToY((ar.get(ar.get(pos1).lh)).y - 667);
+                    translate.setDuration(Duration.millis(1000));
+                    pos1 = ar.get(pos1).lh;
+                }
+//                if (ar.get(pos1).s) {
+//                    translate.setToX((ar.get(ar.get(pos1).st)).x);
+//                    translate.setToY((ar.get(ar.get(pos1).st)).y - 667);
+//                    translate.setDuration(Duration.millis(1000));
+//                    pos1 = ar.get(pos1).st;
+//
+//                }
+                translate.setNode(myCircle1);
+
+                translate.play();
+                System.out.println(pos1 + "position\n");
+                counter++;
+            } else {
+                counter++;
+
+                return;
             }
-            translate.setNode(myCircle);
 
-            translate.play();
-            System.out.println(pos + "position\n");
+        } else {
+            if (num == 1) {
+                check2 = true;
+            }
+            if (check2) {
+                pane_adder();
+                System.out.println(num + "number is ");
+                pos2 = pos2 + num;
+                if (pos2 >= 100) {
+                    pos2=pos2-num;
+                    counter++;
+                    return;
+                }
+                if (pos2 == 99) {
+                    System.out.println("yay\n");
+                }
+                TranslateTransition translate = new TranslateTransition();
+                translate.setToX(ar.get(pos2).x);
+                translate.setToY(ar.get(pos2).y - 667);
+                translate.setDuration(Duration.millis(1000));
+                System.out.println(ar.get(pos2).x);
+                System.out.println(ar.get(pos2).y);
+                System.out.println(q54.getLayoutX() + "x");
+                System.out.println(q54.getLayoutY() + "y");
+
+                if (ar.get(pos2).l) {
+                    translate.setToX((ar.get(ar.get(pos2).lh)).x);
+                    translate.setToY((ar.get(ar.get(pos2).lh)).y - 667);
+                    translate.setDuration(Duration.millis(1000));
+                    pos2 = ar.get(pos2).lh;
+                }
+//                if (ar.get(pos2).s) {
+//                    translate.setToX((ar.get(ar.get(pos2).st)).x);
+//                    translate.setToY((ar.get(ar.get(pos2).st)).y - 667);
+//                    translate.setDuration(Duration.millis(1000));
+//                    pos2 = ar.get(pos2).st;
+//
+//                }
+                translate.setNode(myCircle2);
+
+                translate.play();
+                System.out.println(pos2 + "position\n");
+                counter++;
+            } else {
+                counter++;
+
+                return;
+            }
+
 
         }
-        else {
-            return;
-        }
-
-
-
 
 
     }
