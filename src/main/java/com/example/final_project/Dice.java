@@ -31,9 +31,9 @@ public class Dice {
     @FXML
     private Circle myCircle;
     @FXML
-    private Pane q0;
+    protected Pane q0;
     @FXML
-    private Pane q1;
+    protected Pane q1;
     @FXML
     private Pane q2;
     @FXML
@@ -502,9 +502,12 @@ public class Dice {
 //
 //    }
     boolean check=false;
+    boolean doublecheck=true;
 
     @FXML
     public void action(ActionEvent e) throws InterruptedException {
+
+
 
         if(num==1){
             check=true;
