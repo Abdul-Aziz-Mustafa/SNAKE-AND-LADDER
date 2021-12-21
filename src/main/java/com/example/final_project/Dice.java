@@ -501,39 +501,54 @@ public class Dice {
 //
 //
 //    }
+    boolean check=false;
 
     @FXML
     public void action(ActionEvent e) throws InterruptedException {
-        pane_adder();
-        System.out.println(num + "number is ");
-        pos = pos + num;
-        TranslateTransition translate = new TranslateTransition();
-        translate.setToX(ar.get(pos).x);
-        translate.setToY(ar.get(pos).y - 667);
-        translate.setDuration(Duration.millis(1000));
-        System.out.println(ar.get(pos).x);
-        System.out.println(ar.get(pos).y);
-        System.out.println(q54.getLayoutX()+"x");
-        System.out.println(q54.getLayoutY()+"y");
+
+        if(num==1){
+            check=true;
+        }
+        else if(check){
+            pane_adder();
+            System.out.println(num + "number is ");
+            pos = pos + num;
+            TranslateTransition translate = new TranslateTransition();
+            translate.setToX(ar.get(pos).x);
+            translate.setToY(ar.get(pos).y - 667);
+            translate.setDuration(Duration.millis(1000));
+            System.out.println(ar.get(pos).x);
+            System.out.println(ar.get(pos).y);
+            System.out.println(q54.getLayoutX()+"x");
+            System.out.println(q54.getLayoutY()+"y");
 //        myCircle.getCenterX();
 //        myCircle.getLayoutY();
-        if (ar.get(pos).l) {
-            translate.setToX((ar.get(ar.get(pos).lh)).x);
-            translate.setToY((ar.get(ar.get(pos).lh)).y - 667);
-            translate.setDuration(Duration.millis(1000));
-            pos = ar.get(pos).lh;
-        }
-        if (ar.get(pos).s) {
-            translate.setToX((ar.get(ar.get(pos).st)).x);
-            translate.setToY((ar.get(ar.get(pos).st)).y - 667);
-            translate.setDuration(Duration.millis(1000));
-            pos = ar.get(pos).st;
+            if (ar.get(pos).l) {
+                translate.setToX((ar.get(ar.get(pos).lh)).x);
+                translate.setToY((ar.get(ar.get(pos).lh)).y - 667);
+                translate.setDuration(Duration.millis(1000));
+                pos = ar.get(pos).lh;
+            }
+            if (ar.get(pos).s) {
+                translate.setToX((ar.get(ar.get(pos).st)).x);
+                translate.setToY((ar.get(ar.get(pos).st)).y - 667);
+                translate.setDuration(Duration.millis(1000));
+                pos = ar.get(pos).st;
+
+            }
+            translate.setNode(myCircle);
+
+            translate.play();
+            System.out.println(pos + "position\n");
 
         }
-        translate.setNode(myCircle);
+        else {
+            return;
+        }
 
-        translate.play();
-        System.out.println(pos + "position\n");
+
+
+
 
     }
 

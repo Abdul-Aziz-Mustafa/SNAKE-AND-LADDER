@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.shape.Circle?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="884.0" prefWidth="702.0" style="-fx-background-color: #9e3515;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.final_project.Dice">
+<AnchorPane fx:id="myCircle1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="884.0" prefWidth="702.0" style="-fx-background-color: #9e3515;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.final_project.Dice">
    <children>
       <ImageView fx:id="myGrid" fitHeight="747.0" fitWidth="628.0" layoutX="38.0" layoutY="19.0" pickOnBounds="true">
          <image>
@@ -18,9 +18,7 @@
          </image>
       </ImageView>
       <GridPane layoutX="44.0" layoutY="21.0" prefHeight="741.0" prefWidth="617.0">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -29,11 +27,10 @@
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -41,7 +38,10 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
          <children>
             <Pane fx:id="q99" prefHeight="200.0" prefWidth="200.0" />
             <Pane fx:id="q98" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" />
@@ -135,7 +135,8 @@
             <Pane fx:id="q10" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="9" GridPane.rowIndex="8" />
             <Pane fx:id="q0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="9">
                <children>
-                  <Circle fx:id="myCircle" fill="DODGERBLUE" layoutX="31.0" layoutY="42.0" radius="18.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="myCircle" fill="DODGERBLUE" layoutX="29.0" layoutY="43.0" radius="18.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="myCircle1" fill="#ff231f" layoutX="29.0" layoutY="43.0" radius="18.0" stroke="BLACK" strokeType="INSIDE" />
                </children></Pane>
             <Pane fx:id="q1" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
             <Pane fx:id="q2" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="9" />
@@ -148,12 +149,12 @@
             <Pane fx:id="q9" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="9" GridPane.rowIndex="9" />
          </children>
       </GridPane>
-      <ImageView fx:id="diceImage" fitHeight="75.0" fitWidth="92.0" layoutX="300.0" layoutY="781.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="diceImage" fitHeight="85.0" fitWidth="103.0" layoutX="309.0" layoutY="776.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@D2.jpeg" />
          </image>
       </ImageView>
-      <Button fx:id="rollButton" layoutX="423.0" layoutY="794.0" mnemonicParsing="false" onAction="#roll" prefHeight="52.0" prefWidth="52.0" text="ROLL" />
-      <Button fx:id="myButton" layoutX="186.0" layoutY="819.0" mnemonicParsing="false" onAction="#action" text="Button" />
+      <Button fx:id="rollButton" layoutX="310.0" layoutY="776.0" mnemonicParsing="false" onAction="#roll" opacity="0.0" prefHeight="85.0" prefWidth="86.0" text="ROLL" />
+      <Button fx:id="myButton" layoutX="186.0" layoutY="808.0" mnemonicParsing="false" onAction="#action" prefHeight="36.0" prefWidth="70.0" text="MOVE" />
    </children>
 </AnchorPane>
