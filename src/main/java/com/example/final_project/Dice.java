@@ -322,24 +322,48 @@ public class Dice   {
     class cordinates{
         double x;
         double y;
+        boolean s;
+        boolean l;
+        int st;
+        int lh;
 
         public cordinates(double x, double y) {
             this.x = x;
             this.y = y;
         }
+
+
+        public cordinates(double x, double y, boolean s, boolean l, int st, int lh) {
+            this.x = x;
+            this.y = y;
+            this.s = s;
+            this.l = l;
+            this.st = st;
+            this.lh = lh;
+        }
+
+
     }
 
     ArrayList<cordinates> ar=new ArrayList<cordinates>();
     public void adder(Pane q){
         ar.add(new cordinates(q.getLayoutX(),q.getLayoutY()));
     }
+    public void adderL(Pane q,int lh){
+        ar.add(new cordinates(q.getLayoutX(),q.getLayoutY(),false,true,-1,lh));
+
+    }
+    public void adderS(Pane q,int st){
+        ar.add(new cordinates(q.getLayoutX(),q.getLayoutY(),false,true,-1,st));
+
+    }
     public void pane_adder(){
 
         adder(q0);
         adder(q1);
         adder(q2);
-        adder(q1);
-        adder(q1);
+        adderL(q9,13);
+        adderS(q28,11);
         adder(q1);
         adder(q1);
         adder(q1);
