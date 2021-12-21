@@ -31,11 +31,294 @@ public class Dice   {
     @FXML
     private Circle myCircle;
     @FXML
+    private Pane q0;
+    @FXML
     private Pane q1;
     @FXML
     private Pane q2;
     @FXML
     private Pane q3;
+    @FXML
+    private Pane q4;
+    @FXML
+    private Pane q5;
+    @FXML
+    private Pane q6;
+    @FXML
+    private Pane q7;
+    @FXML
+    private Pane q8;
+    @FXML
+    private Pane q9;
+    @FXML
+    private Pane q10;
+    @FXML
+    private Pane q11;
+    @FXML
+
+    private Pane q12;
+    @FXML
+
+    private Pane q13;
+    @FXML
+
+    private Pane q14;
+    @FXML
+
+    private Pane q15;
+    @FXML
+
+    private Pane q16;
+    @FXML
+
+    private Pane q17;
+    @FXML
+
+    private Pane q18;
+    @FXML
+
+    private Pane q19;
+    @FXML
+
+    private Pane q20;
+    @FXML
+
+    private Pane q21;
+    @FXML
+
+    private Pane q22;
+    @FXML
+
+    private Pane q23;
+    @FXML
+
+    private Pane q24;
+    @FXML
+
+    private Pane q25;
+    @FXML
+
+    private Pane q26;
+    @FXML
+
+    private Pane q27;
+    @FXML
+
+    private Pane q28;
+    @FXML
+
+    private Pane q29;
+    @FXML
+
+    private Pane q30;
+    @FXML
+
+    private Pane q31;
+    @FXML
+
+    private Pane q32;
+    @FXML
+
+    private Pane q33;
+    @FXML
+
+    private Pane q34;
+    @FXML
+
+    private Pane q35;
+    @FXML
+
+    private Pane q36;
+    @FXML
+
+    private Pane q37;
+    @FXML
+
+    private Pane q38;
+    @FXML
+
+    private Pane q39;
+    @FXML
+
+    private Pane q40;
+    @FXML
+
+    private Pane q41;
+    @FXML
+
+    private Pane q42;
+    @FXML
+
+    private Pane q43;
+    @FXML
+
+    private Pane q44;
+    @FXML
+
+    private Pane q45;
+    @FXML
+
+    private Pane q46;
+    @FXML
+
+    private Pane q47;
+    @FXML
+
+    private Pane q48;
+    @FXML
+
+    private Pane q49;
+    @FXML
+
+    private Pane q50;
+    @FXML
+
+    private Pane q51;
+    @FXML
+
+    private Pane q52;
+    @FXML
+
+    private Pane q53;
+    @FXML
+
+    private Pane q54;
+    @FXML
+
+    private Pane q55;
+    @FXML
+
+    private Pane q56;
+    @FXML
+
+    private Pane q57;
+    @FXML
+
+    private Pane q58;
+    @FXML
+
+    private Pane q59;
+    @FXML
+
+    private Pane q60;
+    @FXML
+
+    private Pane q61;
+    @FXML
+
+    private Pane q62;
+    @FXML
+
+    private Pane q63;
+    @FXML
+
+    private Pane q64;
+    @FXML
+
+    private Pane q65;
+    @FXML
+
+    private Pane q66;
+    @FXML
+
+    private Pane q67;
+    @FXML
+
+    private Pane q68;
+    @FXML
+
+    private Pane q69;
+    @FXML
+
+    private Pane q70;
+    @FXML
+
+    private Pane q71;
+    @FXML
+
+    private Pane q72;
+    @FXML
+
+    private Pane q73;
+    @FXML
+
+    private Pane q74;
+    @FXML
+
+    private Pane q75;
+    @FXML
+
+    private Pane q76;
+    @FXML
+
+    private Pane q77;
+    @FXML
+
+    private Pane q78;
+    @FXML
+
+    private Pane q79;
+    @FXML
+
+    private Pane q80;
+    @FXML
+
+    private Pane q81;
+    @FXML
+
+    private Pane q82;
+    @FXML
+
+    private Pane q83;
+    @FXML
+
+    private Pane q84;
+    @FXML
+
+    private Pane q85;
+    @FXML
+
+    private Pane q86;
+    @FXML
+
+    private Pane q87;
+    @FXML
+
+    private Pane q88;
+    @FXML
+
+    private Pane q89;
+    @FXML
+
+    private Pane q90;
+    @FXML
+
+    private Pane q91;
+    @FXML
+
+    private Pane q92;
+    @FXML
+
+    private Pane q93;
+    @FXML
+
+    private Pane q94;
+    @FXML
+
+    private Pane q95;
+    @FXML
+
+    private Pane q96;
+    @FXML
+
+    private Pane q97;
+    @FXML
+
+    private Pane q98;
+    @FXML
+
+    private Pane q99;
+
     class cordinates{
         double x;
         double y;
@@ -52,17 +335,17 @@ public class Dice   {
     }
     public void pane_adder(){
 
+        adder(q0);
         adder(q1);
         adder(q2);
-        adder(q3);
-//        adder(q1);
-//        adder(q1);
-//        adder(q1);
-//        adder(q1);
-//        adder(q1);
-//        adder(q1);
-//        adder(q1);
-//        adder(q1);
+        adder(q1);
+        adder(q1);
+        adder(q1);
+        adder(q1);
+        adder(q1);
+        adder(q1);
+        adder(q1);
+        adder(q1);
 
     }
     @FXML
@@ -77,7 +360,8 @@ public class Dice   {
         myCircle.setCenterX(ar.get(1).x);
     }
     @FXML
-    int roll(ActionEvent event) {
+    void roll(ActionEvent event) {
+        int no;
 
         rollButton.setDisable(true);
 
@@ -99,6 +383,7 @@ public class Dice   {
         };
 
         thread.start();
+
 
     }
 }
