@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.ResourceBundle;
 
-public class Dice {
+public class Dice extends Player{
     //@by_aziz//
     Random random = new Random();
 
@@ -29,9 +29,11 @@ public class Dice {
     @FXML
     private Button rollButton;
     @FXML
-    private Circle myCircle1;
+    private ImageView myCircle1;
     @FXML
-    private Circle myCircle2;
+    private ImageView myCircle2;
+
+
     @FXML
     protected Pane q0;
     @FXML
@@ -359,7 +361,7 @@ public class Dice {
     }
 
     public void adderS(Pane q, int st) {
-        ar.add(new cordinates(q.getLayoutX(), q.getLayoutY(), true, false, -1, st));
+        ar.add(new cordinates(q.getLayoutX(), q.getLayoutY(), false, true, -1, st));
 
     }
 
@@ -486,6 +488,8 @@ public class Dice {
         if (counter % 2 == 0) {
 
             if (num == 1) {
+
+
                 check1 = true;
             }
             if (check1) {
@@ -494,16 +498,18 @@ public class Dice {
                 pos1 = pos1 + num; //97+5
                 if (pos1 >= 100) {
                     pos1=pos1-num;
+
                     counter++;
                     return;
                 }
                 if (pos1 == 99) {
+                    check2=false;
                     System.out.println("yay\n");
                 }
                 TranslateTransition translate = new TranslateTransition();
                 translate.setToX(ar.get(pos1).x);
                 translate.setToY(ar.get(pos1).y - 667);
-                translate.setDuration(Duration.millis(1000));
+                translate.setDuration(Duration.millis(750));
                 System.out.println(ar.get(pos1).x);
                 System.out.println(ar.get(pos1).y);
                 System.out.println(q54.getLayoutX() + "x");
@@ -512,16 +518,16 @@ public class Dice {
                 if (ar.get(pos1).l) {
                     translate.setToX((ar.get(ar.get(pos1).lh)).x);
                     translate.setToY((ar.get(ar.get(pos1).lh)).y - 667);
-                    translate.setDuration(Duration.millis(1000));
+                    translate.setDuration(Duration.millis(750));
                     pos1 = ar.get(pos1).lh;
                 }
-//                if (ar.get(pos1).s) {
-//                    translate.setToX((ar.get(ar.get(pos1).st)).x);
-//                    translate.setToY((ar.get(ar.get(pos1).st)).y - 667);
-//                    translate.setDuration(Duration.millis(1000));
-//                    pos1 = ar.get(pos1).st;
-//
-//                }
+                if (ar.get(pos1).s) {
+                    translate.setToX((ar.get(ar.get(pos1).st)).x);
+                    translate.setToY((ar.get(ar.get(pos1).st)).y - 667);
+                    translate.setDuration(Duration.millis(750));
+                    pos1 = ar.get(pos1).st;
+
+                }
                 translate.setNode(myCircle1);
 
                 translate.play();
@@ -535,6 +541,7 @@ public class Dice {
 
         } else {
             if (num == 1) {
+
                 check2 = true;
             }
             if (check2) {
@@ -547,6 +554,7 @@ public class Dice {
                     return;
                 }
                 if (pos2 == 99) {
+                    check1=false;
                     System.out.println("yay\n");
                 }
                 TranslateTransition translate = new TranslateTransition();
