@@ -495,31 +495,23 @@ public class Dice {
         };
 
         thread.start();
-        thread.join();
+//        thread.join();
 
 
     }
     @FXML
     public void action(ActionEvent e) throws InterruptedException {
         pane_adder();
-
         roll();
-
+//        Thread.sleep(1000);
         System.out.println(num+"number is ");
         pos = pos + num;
         TranslateTransition translate = new TranslateTransition();
             translate.setToX(ar.get(pos).x);
             translate.setToY(ar.get(pos).y-667);
-
-            //setting the duration for the Translate transition
             translate.setDuration(Duration.millis(1000));
-
-//            translate.play();
-//
         System.out.println(ar.get(pos).x);
         System.out.println(ar.get(pos).y);
-//        myCircle.setCenterX(ar.get(pos).x);
-//        myCircle.setCenterY(ar.get(pos).y-667);
         myCircle.getCenterX();
         myCircle.getLayoutY();
         System.out.println(pos+"position\n");
@@ -528,7 +520,6 @@ public class Dice {
             translate.setToY((ar.get(ar.get(pos).lh)).y-667);
             translate.setDuration(Duration.millis(1000));
             pos=ar.get(pos).lh;
-
         }
         if(ar.get(pos).s){
             translate.setToX((ar.get(ar.get(pos).st)).x);
