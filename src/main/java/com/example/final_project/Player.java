@@ -1,10 +1,10 @@
 package com.example.final_project;
 
+import javafx.fxml.FXML;
+import javafx.scene.shape.Circle;
+
 public class Player {
-    private int id;
-    public int getid(int id){
-        return id;
-    }
+
 
 
 }

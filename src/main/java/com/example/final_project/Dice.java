@@ -502,7 +502,7 @@ public class Dice {
 //
 //    }
     boolean check=false;
-    boolean doublecheck=true;
+
 
     @FXML
     public void action(ActionEvent e) throws InterruptedException {
@@ -511,8 +511,9 @@ public class Dice {
 
         if(num==1){
             check=true;
+            boolean doublecheck=true;
         }
-        else if(check){
+        if(check){
             pane_adder();
             System.out.println(num + "number is ");
             pos = pos + num;
