@@ -9,6 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -53,6 +54,10 @@ public void switchtoscene2(ActionEvent event) throws IOException {
 
     @FXML
     ImageView playerWin;
+    @FXML
+    TextField player11;
+    @FXML
+    TextField player12;
 
 
 
@@ -204,6 +209,8 @@ public void switchtoscene2(ActionEvent event) throws IOException {
     public void action(ActionEvent e) throws InterruptedException {
 
 
+
+
         if (counter % 2 == 0) {
 
 
@@ -213,6 +220,8 @@ public void switchtoscene2(ActionEvent event) throws IOException {
                 check1 = true;
             }
             if (check1) {
+
+
                 pane_adder();
                 System.out.println(num + "number is ");
                 pos1 = pos1 + num; //97+5
@@ -293,12 +302,14 @@ public void switchtoscene2(ActionEvent event) throws IOException {
                     try{
                     translate.play();}
                     catch (Exception E){
-                        System.out.println("lol");
+                        System.out.println("ladder");
                     }
                     System.out.println(pos1 + "position\n");
                     counter++;
 
                 }
+                player11.setText(String.valueOf(pos1+1));
+
             } else {
                 counter++;
 
@@ -311,6 +322,8 @@ public void switchtoscene2(ActionEvent event) throws IOException {
                 check2 = true;
             }
             if (check2) {
+
+
                 pane_adder();
                 System.out.println(num + "number is ");
                 pos2 = pos2 + num;
@@ -381,12 +394,17 @@ public void switchtoscene2(ActionEvent event) throws IOException {
                 }
                 if (!ar.get(pos2).s && !ar.get(pos2).l) {
                     translate.setNode(myCircle2);
-
-                    translate.play();
+                    try{
+                    translate.play();}
+                    catch (Exception E){
+                        System.out.println("Snake");
+                    }
                     System.out.println(pos2 + "position\n");
                     counter++;
 
                 }
+                player12.setText(String.valueOf(pos2+1));
+
             } else {
                 counter++;
 
