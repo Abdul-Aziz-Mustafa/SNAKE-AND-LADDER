@@ -14,7 +14,11 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Random;
 
@@ -28,6 +32,16 @@ public void switchtoscene2(ActionEvent event) throws IOException {
     Parent root= FXMLLoader.load(getClass().getResource("hello-view.fxml"));
     stage=(Stage) ((Node)event.getSource()).getScene().getWindow();
     scene=new Scene(root);
+    String path = "C:/Users/abdul/Downloads/md.mp3";
+
+    //Instantiating Media class
+    Media media = new Media(new File(path).toURI().toString());
+
+    //Instantiating MediaPlayer class
+    MediaPlayer mediaPlayer = new MediaPlayer(media);
+
+//        by setting this property to true, the audio will be played
+        mediaPlayer.setAutoPlay(true);
     stage.setScene(scene);
     stage.show();
 

@@ -5,7 +5,7 @@ import javafx.scene.layout.Pane;
 
 import java.util.ArrayList;
 
-public class Board extends Dice{
+public class Board extends Dice implements str{
     @FXML
     protected Pane q0;
     @FXML
@@ -296,16 +296,17 @@ public class Board extends Dice{
 
 
     ArrayList<Controller.cordinates> ar = new ArrayList<Controller.cordinates>();
-
+    @Override
     public void adder(Pane q) {
         ar.add(new Controller.cordinates(q.getLayoutX(), q.getLayoutY()));
     }
 
+    @Override
     public void adderL(Pane q, int lh) {
         ar.add(new Controller.cordinates(q.getLayoutX(), q.getLayoutY(), false, true, -1, lh));
 
     }
-
+    @Override
     public void adderS(Pane q, int st) {
         ar.add(new Controller.cordinates(q.getLayoutX(), q.getLayoutY(), false, true, -1, st));
 
