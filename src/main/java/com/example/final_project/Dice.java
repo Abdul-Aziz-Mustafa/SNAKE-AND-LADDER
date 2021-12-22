@@ -3,16 +3,22 @@ package com.example.final_project;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +26,28 @@ import java.util.Random;
 import java.util.ResourceBundle;
 
 public class Dice extends Player{
+
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
+
+public void switchtoscene2(ActionEvent event) throws IOException {
+    Parent root= FXMLLoader.load(getClass().getResource("hello-view.fxml"));
+    stage=(Stage) ((Node)event.getSource()).getScene().getWindow();
+    scene=new Scene(root);
+    stage.setScene(scene);
+    stage.show();
+
+}
+    public void switchtoscene1(ActionEvent event) throws IOException {
+        Parent root= FXMLLoader.load(getClass().getResource("Scene1.fxml"));
+        stage=(Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene=new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+
     //@by_aziz//
     Random random = new Random();
 
@@ -322,6 +350,10 @@ public class Dice extends Player{
     @FXML
 
     private Pane q99;
+    @FXML
+    ImageView playerWin;
+
+
 
     class cordinates {
         double x;
@@ -487,6 +519,7 @@ public class Dice extends Player{
 
         if (counter % 2 == 0) {
 
+
             if (num == 1) {
 
 
@@ -503,6 +536,9 @@ public class Dice extends Player{
                     return;
                 }
                 if (pos1 == 99) {
+                    Image myImage=new Image(getClass().getResourceAsStream("Win.png"));
+                    playerWin.setX(q3.getLayoutX());
+                    playerWin.setImage(myImage);
                     check2=false;
                     System.out.println("yay\n");
                 }
@@ -554,6 +590,9 @@ public class Dice extends Player{
                     return;
                 }
                 if (pos2 == 99) {
+                    Image myImage1=new Image(getClass().getResourceAsStream("Win.png"));
+                    playerWin.setX(q3.getLayoutX());
+                    playerWin.setImage(myImage1);
                     check1=false;
                     System.out.println("yay\n");
                 }

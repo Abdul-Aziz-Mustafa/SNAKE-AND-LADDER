@@ -9,6 +9,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 
+
 import java.io.File;
 import java.io.IOException;
 
@@ -26,12 +27,13 @@ public class HelloApplication extends Application {
         Image icon = new Image("icon3.jpeg");
         stage.getIcons().add(icon);
         stage.setTitle("Snake And Ladder");
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Scene1.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
         stage.setScene(scene);
         stage.show();
     }
+
 
 
 
