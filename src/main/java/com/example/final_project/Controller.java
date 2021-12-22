@@ -28,29 +28,21 @@ public class Controller extends Board {
     private Scene scene;
     private Parent root;
 
-public void switchtoscene2(ActionEvent event) throws IOException {
-    Parent root= FXMLLoader.load(getClass().getResource("hello-view.fxml"));
-    stage=(Stage) ((Node)event.getSource()).getScene().getWindow();
-    scene=new Scene(root);
-    String path = "C:/Users/abdul/Downloads/md.mp3";
+    public void switchtoscene2(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
 
-    //Instantiating Media class
-    Media media = new Media(new File(path).toURI().toString());
-
-    //Instantiating MediaPlayer class
-    MediaPlayer mediaPlayer = new MediaPlayer(media);
-
-//        by setting this property to true, the audio will be played
-        mediaPlayer.setAutoPlay(true);
-    stage.setScene(scene);
-    stage.show();
+        stage.setScene(scene);
+        stage.show();
 
 
-}
+    }
+
     public void switchtoscene1(ActionEvent event) throws IOException {
-        Parent root= FXMLLoader.load(getClass().getResource("Scene1.fxml"));
-        stage=(Stage) ((Node)event.getSource()).getScene().getWindow();
-        scene=new Scene(root);
+        Parent root = FXMLLoader.load(getClass().getResource("Scene1.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
@@ -65,14 +57,12 @@ public void switchtoscene2(ActionEvent event) throws IOException {
     private ImageView myCircle2;
 
 
-
     @FXML
     ImageView playerWin;
     @FXML
     TextField player11;
     @FXML
     TextField player12;
-
 
 
     static class cordinates {
@@ -100,7 +90,6 @@ public void switchtoscene2(ActionEvent event) throws IOException {
 
 
     }
-
 
 
     public void pane_adder() {
@@ -209,7 +198,6 @@ public void switchtoscene2(ActionEvent event) throws IOException {
     }
 
 
-
     static int pos1 = 0;
     static int pos2 = 0;
 
@@ -221,8 +209,6 @@ public void switchtoscene2(ActionEvent event) throws IOException {
 
     @FXML
     public void action(ActionEvent e) throws InterruptedException {
-
-
 
 
         if (counter % 2 == 0) {
@@ -263,20 +249,15 @@ public void switchtoscene2(ActionEvent event) throws IOException {
                 System.out.println(q54.getLayoutY() + "y");
 
                 if (ar.get(pos1).l) {
+
                     TranslateTransition translate1 = new TranslateTransition();
 
                     translate1.setToX((ar.get(ar.get(pos1).lh)).x);
                     translate1.setToY((ar.get(ar.get(pos1).lh)).y - 667);
                     translate1.setDuration(Duration.millis(750));
                     SequentialTransition seqT = new SequentialTransition(myCircle1, translate, translate1);
-//                    String path = "C:/Users/abdul/Downloads/ladder.mp3";
-//
-//                    //Instantiating Media class
-//                    Media media = new Media(new File(path).toURI().toString());
-//
-//                    //Instantiating MediaPlayer class
-//                    MediaPlayer mediaPlayer = new MediaPlayer(media);
-//                    mediaPlayer.setAutoPlay(true);
+
+
 
 
                     seqT.play();
@@ -286,6 +267,9 @@ public void switchtoscene2(ActionEvent event) throws IOException {
 
                 }
                 if (ar.get(pos1).s) {
+
+
+//
                     TranslateTransition translate1 = new TranslateTransition();
 
                     translate1.setToX((ar.get(ar.get(pos1).st)).x);
@@ -297,14 +281,7 @@ public void switchtoscene2(ActionEvent event) throws IOException {
 
                     SequentialTransition seqT = new SequentialTransition(myCircle1, translate, translate1);
 
-//                    String path = "C:/Users/abdul/Downloads/snake.mp3";
 
-                    //Instantiating Media class
-//                    Media media = new Media(new File(path).toURI().toString());
-//
-//                    //Instantiating MediaPlayer class
-//                    MediaPlayer mediaPlayer = new MediaPlayer(media);
-//                    mediaPlayer.setAutoPlay(true);
                     seqT.play();
 
                     counter++;
@@ -313,16 +290,18 @@ public void switchtoscene2(ActionEvent event) throws IOException {
                 }
                 if (!ar.get(pos1).s && !ar.get(pos1).l) {
                     translate.setNode(myCircle1);
-                    try{
-                    translate.play();}
-                    catch (Exception E){
+                    try {
+                        translate.play();
+                    } catch (Exception E) {
+                        counter++;
+
                         System.out.println("ladder");
                     }
                     System.out.println(pos1 + "position\n");
                     counter++;
 
                 }
-                player11.setText(String.valueOf(pos1+1));
+                player11.setText(String.valueOf(pos1 + 1));
 
             } else {
                 counter++;
@@ -362,20 +341,14 @@ public void switchtoscene2(ActionEvent event) throws IOException {
                 System.out.println(q54.getLayoutX() + "x");
                 System.out.println(q54.getLayoutY() + "y");
                 if (ar.get(pos2).l) {
+
                     TranslateTransition translate1 = new TranslateTransition();
 
                     translate1.setToX((ar.get(ar.get(pos2).lh)).x);
                     translate1.setToY((ar.get(ar.get(pos2).lh)).y - 667);
                     translate1.setDuration(Duration.millis(750));
                     SequentialTransition seqT = new SequentialTransition(myCircle2, translate, translate1);
-                    String path = "C:/Users/abdul/Downloads/ladder.mp3";
 
-//                    //Instantiating Media class
-//                    Media media = new Media(new File(path).toURI().toString());
-//
-//                    //Instantiating MediaPlayer class
-//                    MediaPlayer mediaPlayer = new MediaPlayer(media);
-//                    mediaPlayer.setAutoPlay(true);
 
                     seqT.play();
 
@@ -384,6 +357,7 @@ public void switchtoscene2(ActionEvent event) throws IOException {
 
                 }
                 if (ar.get(pos2).s) {
+
                     TranslateTransition translate1 = new TranslateTransition();
 
                     translate1.setToX((ar.get(ar.get(pos2).st)).x);
@@ -393,14 +367,8 @@ public void switchtoscene2(ActionEvent event) throws IOException {
 //                    translate.setNode(myCircle1);
 
                     SequentialTransition seqT = new SequentialTransition(myCircle2, translate, translate1);
-                    String path = "C:/Users/abdul/Downloads/snake.mp3";
 
-                    //Instantiating Media class
-//                    Media media = new Media(new File(path).toURI().toString());
-//
-//                    //Instantiating MediaPlayer class
-//                    MediaPlayer mediaPlayer = new MediaPlayer(media);
-//                    mediaPlayer.setAutoPlay(true);
+
                     seqT.play();
                     counter++;
 
@@ -408,16 +376,18 @@ public void switchtoscene2(ActionEvent event) throws IOException {
                 }
                 if (!ar.get(pos2).s && !ar.get(pos2).l) {
                     translate.setNode(myCircle2);
-                    try{
-                    translate.play();}
-                    catch (Exception E){
+                    try {
+                        translate.play();
+                    } catch (Exception E) {
+                        counter++;
+
                         System.out.println("Snake");
                     }
                     System.out.println(pos2 + "position\n");
                     counter++;
 
                 }
-                player12.setText(String.valueOf(pos2+1));
+                player12.setText(String.valueOf(pos2 + 1));
 
             } else {
                 counter++;
@@ -430,9 +400,6 @@ public void switchtoscene2(ActionEvent event) throws IOException {
 
 
     }
-
-
-
 
 
 }

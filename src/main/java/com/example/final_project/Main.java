@@ -6,6 +6,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 
@@ -27,6 +29,14 @@ public class Main extends Application {
         Image icon = new Image("icon3.jpeg");
         stage.getIcons().add(icon);
         stage.setTitle("Snake And Ladder");
+
+
+        String path = "C:/Users/abdul/Downloads/yn.mp3";
+        Media media = new Media(new File(path).toURI().toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(media);
+        mediaPlayer.setAutoPlay(true);
+        mediaPlayer.setVolume(0.2);
+
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Scene1.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 

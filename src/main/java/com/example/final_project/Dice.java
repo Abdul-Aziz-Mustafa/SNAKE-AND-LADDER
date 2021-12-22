@@ -5,7 +5,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
+import java.io.File;
 import java.util.Random;
 
 public class Dice  {
@@ -21,6 +24,16 @@ public class Dice  {
 
     @FXML
     void roll(ActionEvent event) {
+        String path = "C:/Users/abdul/Downloads/diceroll.mp3";
+
+//                    Instantiating Media class
+        Media media = new Media(new File(path).toURI().toString());
+
+        //Instantiating MediaPlayer class
+        MediaPlayer mediaPlayer = new MediaPlayer(media);
+        mediaPlayer.setAutoPlay(true);
+        mediaPlayer.setVolume(1);
+
 
 
         rollButton.setDisable(true);
